@@ -98,6 +98,10 @@
               your queries, and experience exceptional service. We're here to
               assist you promptly and effectively. Your message matters to us."
             </p>
+
+            <div class="alert alert-success" id="exportsuccess">
+              <strong>Success!</strong> Your Request was sent successful.
+            </div>
             <form id="contactForm" class="wow fadeIn" data-wow-delay="0.1s">
               <div class="row g-3">
                 <div class="col-md-6">
@@ -216,6 +220,7 @@
     <script src="js/main.js"></script>
     <script>
       $(document).ready(function () {
+        $("#exportsuccess").hide();
         $("#contactForm").validate({
           rules: {
             name: {
@@ -273,7 +278,9 @@
               data: JSON.stringify(formData),
               contentType: "application/json",
               success: function (response) {
-                alert("Form submitted successfully!");
+                form.reset();
+                $("#exportsuccess").show();
+                $("#exportsuccess").removeAttr("style").delay(2000).fadeOut();
               },
               error: function (error) {
                 alert("Error submitting the form: " + error.statusText);

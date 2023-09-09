@@ -115,6 +115,9 @@
           </div>
           <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
             <div class="h-100 bg-secondary p-5">
+              <div class="alert alert-success" id="exportsuccess">
+                <strong>Success!</strong> Your Request was sent successful.
+              </div>
               <form id="freeTrialForm" method="post">
                 <div class="row g-3">
                   <div class="col-12">
@@ -207,6 +210,7 @@
     <script>
       $(document).ready(function () {
         // Initialize Toastr.js options
+        $("#exportsuccess").hide();
         toastr.options = {
           closeButton: true,
           progressBar: true,
@@ -269,9 +273,8 @@
               success: function (response) {
                 // Reset the form
                 form.reset();
-
-                // Show a success message using Toastr.js
-                toastr.success("Form submitted successfully!", "Success");
+                $("#exportsuccess").show();
+                $("#exportsuccess").removeAttr("style").delay(2000).fadeOut();
               },
               error: function (error) {
                 // Show an error message using Toastr.js

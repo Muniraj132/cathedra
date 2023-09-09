@@ -198,6 +198,9 @@
           </div>
           <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
             <div class="h-100 bg-white p-5">
+              <div class="alert alert-success" id="exportsuccess">
+                <strong>Success!</strong> Your Request was sent successful.
+              </div>
               <form id="productTourForm" method="post">
                 <div class="row g-3">
                   <div class="col-12">
@@ -288,6 +291,7 @@
     <script src="js/main.js"></script>
     <script>
       $(document).ready(function () {
+        $("#exportsuccess").hide();
         // Initialize Toastr.js options
         toastr.options = {
           closeButton: true,
@@ -352,8 +356,8 @@
                 // Reset the form
                 form.reset();
 
-                // Show a success message using Toastr.js
-                toastr.success("Form submitted successfully!", "Success");
+                $("#exportsuccess").show();
+                $("#exportsuccess").removeAttr("style").delay(2000).fadeOut();
               },
               error: function (error) {
                 // Show an error message using Toastr.js
