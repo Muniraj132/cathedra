@@ -395,7 +395,22 @@
 }
 
 /*** Footer ***/
+.foot-link {
+  /* display: block; */
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
 
+.foot-link:hover {
+  color: var(--light);
+  letter-spacing: 0.3px;
+  box-shadow: none;
+}
 .footer .btn.btn-link {
   display: block;
   margin-bottom: 5px;
