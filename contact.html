@@ -98,13 +98,12 @@
               your queries, and experience exceptional service. We're here to
               assist you promptly and effectively. Your message matters to us."
             </p>
-
-            <div class="alert alert-success" id="exportsuccess">
-              <strong>Success!</strong> Your Request was sent successful.
-            </div>
             <form id="contactForm" class="wow fadeIn" data-wow-delay="0.1s">
               <div class="row g-3">
                 <div class="col-md-6">
+                  <label>Name <span class="error-message">*</span></label>
+                  <br/>
+                  <br/>
                   <div class="form-floating">
                     <input
                       type="text"
@@ -118,6 +117,9 @@
                   <!-- Error message placeholder -->
                 </div>
                 <div class="col-md-6">
+                  <label>Email <span class="error-message">*</span></label>
+                  <br/>
+                  <br/>
                   <div class="form-floating">
                     <input
                       type="email"
@@ -131,6 +133,9 @@
                   <!-- Error message placeholder -->
                 </div>
                 <div class="col-12">
+                  <label>Mobile <span class="error-message">*</span></label>
+                  <br/>
+                  <br/>
                   <div class="form-floating">
                     <input
                       type="tel"
@@ -146,6 +151,9 @@
                   <!-- Error message placeholder -->
                 </div>
                 <div class="col-12">
+                  <label>Subject <span class="error-message">*</span></label>
+                  <br/>
+                  <br/>
                   <div class="form-floating">
                     <input
                       type="text"
@@ -220,7 +228,6 @@
     <script src="js/main.js"></script>
     <script>
       $(document).ready(function () {
-        $("#exportsuccess").hide();
         $("#contactForm").validate({
           rules: {
             name: {
@@ -278,9 +285,7 @@
               data: JSON.stringify(formData),
               contentType: "application/json",
               success: function (response) {
-                form.reset();
-                $("#exportsuccess").show();
-                $("#exportsuccess").removeAttr("style").delay(2000).fadeOut();
+                alert("Form submitted successfully!");
               },
               error: function (error) {
                 alert("Error submitting the form: " + error.statusText);
