@@ -405,7 +405,18 @@
   text-transform: capitalize;
   transition: 0.3s;
 }
-
+.foot-link-mail {
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.foot-link-mail:hover {
+  color: white !important;
+}
 .foot-link:hover {
   color: var(--light);
   letter-spacing: 0.3px;
@@ -459,4 +470,12 @@
 
 .footer .copyright a:hover {
   color: var(--primary);
+}
+#securitypage {
+  font-size: 19px;
+  font-family: math;
+  font-weight: 500;
+  color: black;
+  line-height: 31px;
+  margin: 30px;
 }
